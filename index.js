@@ -1,6 +1,6 @@
 var createError = require("http-errors");
 var express = require("express");
-const PORT = 4000 || process.env.PORT;
+const PORT = process.env.PORT;
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");

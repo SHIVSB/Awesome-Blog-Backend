@@ -16,6 +16,7 @@ postController.createPost = expressAsyncHandler(async (req, res) => {
     result: "",
   };
 
+
   const { _id } = req.user;
   //   validateMongodbId(req.body.user);
 
@@ -212,7 +213,7 @@ postController.toggleAddDisliketoPost = expressAsyncHandler(
 
     const post = await Post.findById(postId);
 
-    const isDisliked = post?.isDisliked;
+    const isDisliked = post?.isDisLiked;
 
     const alreadyLiked = post?.likes?.find(
       (userId) => userId.toString() === loginUserId.toString()
@@ -235,7 +236,7 @@ postController.toggleAddDisliketoPost = expressAsyncHandler(
         postId,
         {
           $pull: { disLikes: loginUserId },
-          isDisliked: false,
+          isDisLiked: false,
         },
         {
           new: true,
@@ -248,7 +249,7 @@ postController.toggleAddDisliketoPost = expressAsyncHandler(
         postId,
         {
           $push: { disLikes: loginUserId },
-          isDisliked: true,
+          isDisLiked: true,
         },
         {
           new: true,

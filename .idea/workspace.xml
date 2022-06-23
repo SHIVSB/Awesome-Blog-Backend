@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="afde7740-f44c-412a-9075-d600527a1972" name="Changes" comment="" />
+    <list default="true" id="afde7740-f44c-412a-9075-d600527a1972" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/postController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/postController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validateMongodbID.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validateMongodbID.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="24Q5MMXa4I2cxF2YKOHXJ9N9VnM" />
   <component name="ProjectViewState">
@@ -16,7 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GamIO/gamio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -30,6 +37,8 @@
       <workItem from="1643549923035" duration="2957000" />
       <workItem from="1643722742973" duration="365000" />
       <workItem from="1644079511601" duration="27000" />
+      <workItem from="1653767749333" duration="2550000" />
+      <workItem from="1654534075623" duration="1215000" />
     </task>
     <servers />
   </component>
