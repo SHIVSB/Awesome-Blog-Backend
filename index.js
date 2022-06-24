@@ -1,6 +1,6 @@
 var createError = require("http-errors");
 var express = require("express");
-const PORT = process.env.PORT;
+const PORT = 4000 || process.env.PORT;
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
@@ -21,6 +21,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
+app.get("/", function (req, res) {
+  res.send("Shivanshu");
+});
 app.use("/api", apiRouter);
 // console.log(process);
 
@@ -35,3 +38,4 @@ app.listen(PORT, function (err) {
 
   console.log(`Server started successfully on PORT : ${PORT}`);
 });
+

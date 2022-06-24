@@ -3,12 +3,15 @@ orbs:
   node: circleci/node@4.1.0
   heroku: circleci/heroku@1.2.6
 jobs:
-  build:
-    executor: node/default
+  build_and_test: # this can be any name you choose
+    executor: node/default # use the default executor defined within the orb
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: npm
+      - run:
+          command: npm run test
+          name: Run tests
       - run:
           command: npm run build:production
           name: Build app
@@ -16,6 +19,8 @@ jobs:
           root: ~/project
           paths:
             - .
+
+  
   deploy: # this can be any name you choose
     executor: heroku/default
     steps:
@@ -25,12 +30,12 @@ jobs:
           force: true
 
 workflows:
-  build_production:
+  build_test_deploy:
     jobs:
-      - build
+      - build_and_test
       - deploy:
           requires:
-            - build
+            - build_and_test
           filters:
             branches:
               only: main
