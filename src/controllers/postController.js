@@ -155,7 +155,7 @@ postController.toggleAddLiketoPost = expressAsyncHandler(async (req, res) => {
 
   const isLiked = post.isLiked;
 
-  const alreadyDisliked = post?.disLikes?.find(
+  const alreadyDisliked = post.disLikes?.find(
     (userId) => userId.toString() === loginUserId.toString()
   );
 
@@ -213,9 +213,9 @@ postController.toggleAddDisliketoPost = expressAsyncHandler(
 
     const post = await Post.findById(postId);
 
-    const isDisliked = post?.isDisLiked;
+    const isDisliked = post.isDisLiked;
 
-    const alreadyLiked = post?.likes?.find(
+    const alreadyLiked = post.likes?.find(
       (userId) => userId.toString() === loginUserId.toString()
     );
 
