@@ -22,6 +22,7 @@ jobs:
     environment:
       HEROKU_APP_NAME: bloggingwebsite-backend
       HEROKU_API_KEY: 52a2f006-fa2d-4392-bad1-ae82c4106619
+      HEROKU_PASSWORD: hGfA32hDkiSi8yg
     steps:
       - checkout
       - run:
