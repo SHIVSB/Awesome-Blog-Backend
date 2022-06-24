@@ -23,10 +23,10 @@ jobs:
       HEROKU_APP_NAME: "bloggingwebsite-backend"
     steps:
       - checkout
-      - attach_workspace:
-          at: ~/project
-      - heroku/deploy-via-git:
-          force: true
+      - run:
+          name: Deploy Main to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/bloggingwebsite-backend.git main
 
 workflows:
   build_test_deploy:
