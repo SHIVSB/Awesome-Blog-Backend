@@ -20,13 +20,14 @@ jobs:
   deploy:
     executor: heroku/default
     environment:
-      HEROKU_APP_NAME: "bloggingwebsite-backend"
+      HEROKU_APP_NAME: bloggingwebsite-backend
+      HEROKU_API_KEY: 52a2f006-fa2d-4392-bad1-ae82c4106619
     steps:
       - checkout
       - run:
           name: Deploy Main to Heroku
           command: |
-            git push https://52a2f006-fa2d-4392-bad1-ae82c4106619@git.heroku.com/bloggingwebsite-backend.git main
+            git push https://$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
 
 workflows:
   build_test_deploy:
