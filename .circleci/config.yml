@@ -1,13 +1,14 @@
 version: 2.1
 orbs:
   node: circleci/node@4.1.0
+  heroku: circleci/heroku@1.2.6
 jobs:
   build:
     executor: node/default
     steps:
       - checkout
-      - run: 
-          command: npm ci
+      - node/install-packages:
+          pkg-manager: npm
       - run:
           command: npm run build:production
           name: Build app
@@ -15,7 +16,21 @@ jobs:
           root: ~/project
           paths:
             - .
+  deploy: # this can be any name you choose
+    executor: heroku/default
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - heroku/deploy-via-git:
+          force: true
+
 workflows:
   build_production:
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: main
