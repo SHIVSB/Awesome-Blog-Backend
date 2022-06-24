@@ -18,9 +18,10 @@ jobs:
             - .
 
   deploy: # this can be any name you choose
-    - checkout
+    
     executor: heroku/default
     steps:
+      - checkout
       - attach_workspace:
           at: ~/project
       - heroku/deploy-via-git:
