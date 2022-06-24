@@ -46,7 +46,7 @@ postController.createPost = expressAsyncHandler(async (req, res) => {
   try {
     const post = await Post.create({
       ...req.body,
-      // image: imgUploaded?.url,
+      // image: imgUploaded.url,
       user: _id,
     }); //because image not coming from body
     responseData.msg = "Post created successfully";

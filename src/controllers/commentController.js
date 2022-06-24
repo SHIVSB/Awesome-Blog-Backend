@@ -57,7 +57,7 @@ commentController.updateComment = expressAsyncHandler(async (req, res) => {
       id,
       {
         user: req.user,
-        post: req.body?.postId,
+        post: req.body.postId,
         description: description,
       },
       {
