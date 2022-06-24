@@ -18,9 +18,11 @@ jobs:
             - .
 
   deploy: # this can be any name you choose
-    - checkout
     executor: heroku/default
+    environment:
+      HEROKU_APP_NAME: "bloggingwebsite-backend"
     steps:
+      - checkout
       - attach_workspace:
           at: ~/project
       - heroku/deploy-via-git:
