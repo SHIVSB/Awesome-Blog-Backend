@@ -18,6 +18,7 @@ jobs:
             - .
 
   deploy: # this can be any name you choose
+    - checkout
     executor: heroku/default
     steps:
       - attach_workspace:
