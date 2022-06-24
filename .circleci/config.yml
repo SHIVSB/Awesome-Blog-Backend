@@ -15,3 +15,7 @@ jobs:
           root: ~/project
           paths:
             - .
+workflows:
+  build_production:
+    jobs:
+      - build
