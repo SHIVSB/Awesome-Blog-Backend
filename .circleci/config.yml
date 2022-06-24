@@ -17,11 +17,7 @@ jobs:
           paths:
             - .
 
-  deploy: # this can be any name you choose
-<<<<<<< HEAD
-=======
-    
->>>>>>> 5f42d856295548e5dbe773aacfe0c534609e28e0
+  deploy:
     executor: heroku/default
     environment:
       HEROKU_APP_NAME: "bloggingwebsite-backend"
