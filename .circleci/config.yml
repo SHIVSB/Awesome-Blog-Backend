@@ -22,14 +22,12 @@ jobs:
     environment:
       HEROKU_APP_NAME: bloggingwebsite-backend
       HEROKU_API_KEY: 52a2f006-fa2d-4392-bad1-ae82c4106619
-      USERNAME: SHIVANSHU PANWAR
-      PASSWORD: hGfA32hDkiSi8yg
+
     steps:
       - checkout
-      - run:
-          name: Deploy Main to Heroku
-          command: |
-            git push https://$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git main
+      - attach_workspace:
+          at: ~/PROJECT
+      - heroku/deploy-via-git
 
 workflows:
   build_test_deploy:
