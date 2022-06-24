@@ -1,0 +1,41 @@
+version: 2.1
+orbs:
+  node: circleci/node@4.1.0
+  heroku: circleci/heroku@1.2.6
+jobs:
+  build_and_test: # this can be any name you choose
+    executor: node/default # use the default executor defined within the orb
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run test
+          name: Run tests
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+
+  deploy:
+    executor: heroku/default
+    environment:
+      HEROKU_APP_NAME: bloggingwebsite-backend
+      HEROKU_API_KEY: 52a2f006-fa2d-4392-bad1-ae82c4106619
+
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/PROJECT
+      - heroku/deploy-via-git
+
+workflows:
+  build_test_deploy:
+    jobs:
+      - build_and_test
+      - deploy:
+          requires:
+            - build_and_test
+          filters:
+            branches:
+              only: main
