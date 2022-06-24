@@ -1,10 +1,12 @@
 version: 2.1
+orbs:
+  node: circleci/node@4.1.0
 jobs:
   build:
-    executore: node/default
+    executor: node/default
     steps:
       - checkout
-      - run:
+      - run: 
           command: npm ci
       - run:
           command: npm run build:production
