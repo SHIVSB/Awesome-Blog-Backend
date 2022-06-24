@@ -10,6 +10,6 @@ jobs:
           command: npm run build:production
           name: Build app
       - persist_to_workspace:
-          root: `/project
+          root: ~/project
           paths:
             - .
