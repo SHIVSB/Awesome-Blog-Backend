@@ -26,8 +26,8 @@ emailController.sendEmailMsg = expressAsyncHandler(async (req, res) => {
     await sgMail.send(msg);
     //save to our db
     await emailMsg.create({
-      sentBy: req?.user?._id,
-      from: req?.user?.email,
+      sentBy: req.user?._id,
+      from: req.user?.email,
       to,
       message,
       subject,

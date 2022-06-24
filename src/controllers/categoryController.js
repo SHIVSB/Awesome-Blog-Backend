@@ -53,7 +53,7 @@ categoryController.updateCategory = expressAsyncHandler(async (req, res) => {
     const category = await Category.findByIdAndUpdate(
       id,
       {
-        title: req?.body?.title,
+        title: req.body?.title,
       },
       {
         new: true,

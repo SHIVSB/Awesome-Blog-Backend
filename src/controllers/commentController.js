@@ -56,7 +56,7 @@ commentController.updateComment = expressAsyncHandler(async (req, res) => {
     const comment = await Comment.findByIdAndUpdate(
       id,
       {
-        user: req?.user,
+        user: req.user,
         post: req.body?.postId,
         description: description,
       },
