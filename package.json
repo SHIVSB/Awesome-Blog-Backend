@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "build": "next build",
-    "build:production": "npm run build && npm run start"
+    "build:production": "npm run start"
   },
   "keywords": [],
   "author": "",
