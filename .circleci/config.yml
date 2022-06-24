@@ -26,7 +26,7 @@ jobs:
       - run:
           name: Deploy Main to Heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/bloggingwebsite-backend.git main
+            git push https://52a2f006-fa2d-4392-bad1-ae82c4106619@git.heroku.com/bloggingwebsite-backend.git main
 
 workflows:
   build_test_deploy:
