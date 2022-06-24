@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  build:
+    executore: node/default
+    steps:
+      - checkout
+      - run:
+          command: npm ci
+      - run:
+          commnad npm run build:production
+          name: Build app
+      - persist_to_workspace:
+          root: `/project
+          paths:
+            - .
